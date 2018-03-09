@@ -1,6 +1,7 @@
 package com.company;
 
 import PatternDecorator.*;
+import PatternSingleton.Singleton;
 
 public class Main {
 
@@ -21,6 +22,7 @@ public class Main {
         */
 
         //Decorator Test
+        /*
         //Creating Two Genders
         Person man = new Man();
         Person woman = new Woman();
@@ -33,7 +35,14 @@ public class Main {
 
         man.sayYourGender();
         PoliteWoman.sayYourGender();
+        */
 
-
+        //Singleton
+        //Even though I get instance two times message of creation is displayed only once
+        //as Singleton is created only in the first time.
+        /*
+        Singleton.getInstance();
+        Singleton.getInstance();
+        */
     }
 }
