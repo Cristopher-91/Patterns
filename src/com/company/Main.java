@@ -2,6 +2,7 @@ package com.company;
 
 import PatternDecorator.*;
 import PatternSingleton.Singleton;
+import PatternState.Player;
 
 public class Main {
 
@@ -44,5 +45,13 @@ public class Main {
         Singleton.getInstance();
         Singleton.getInstance();
         */
+
+        //State Test
+        Player player = new Player(35);
+        player.gamble(10);
+        player.gamble(20);
+        player.gamble(25);
+        player.gamble(5);
+
     }
 }

@@ -4,3 +4,4 @@ Patterns available:
 1) Observer
 2) Decorator
 3) Singleton
+4) State
