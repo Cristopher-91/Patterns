@@ -5,3 +5,4 @@ Patterns available:
 2) Decorator
 3) Singleton
 4) State
+5) Object Null

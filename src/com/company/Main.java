@@ -3,6 +3,7 @@ package com.company;
 import PatternDecorator.*;
 import PatternSingleton.Singleton;
 import PatternState.Player;
+import PatternNullObject.*;
 
 public class Main {
 
@@ -47,11 +48,34 @@ public class Main {
         */
 
         //State Test
+        /*
         Player player = new Player(35);
         player.gamble(10);
         player.gamble(20);
         player.gamble(25);
         player.gamble(5);
+        */
+
+        //NullObjectTest
+
+        Company company = new Company();
+
+        //Firma zatrudnia trzech pracowników
+        company.HireEmployee("Adam");
+        company.HireEmployee("Weronika");
+        company.HireEmployee("Michał");
+
+        //Firma sprawdza czy posiada takowych pracowników
+        AbstractEmployee E1 = company.getEmployee("Adam");
+        AbstractEmployee E2 = company.getEmployee("Natalia");
+        AbstractEmployee E3 = company.getEmployee("Michał");
+        AbstractEmployee E4 = company.getEmployee("Krystyna");
+
+        System.out.println("Employees");
+        System.out.println(E1.getName());
+        System.out.println(E2.getName());
+        System.out.println(E3.getName());
+        System.out.println(E4.getName());
 
     }
 }
