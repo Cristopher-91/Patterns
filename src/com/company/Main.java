@@ -1,9 +1,6 @@
 package com.company;
 
-import PatternDecorator.*;
-import PatternSingleton.Singleton;
-import PatternState.Player;
-import PatternNullObject.*;
+import PatternComposite.*;
 
 public class Main {
 
@@ -57,7 +54,7 @@ public class Main {
         */
 
         //NullObjectTest
-
+        /*
         Company company = new Company();
 
         //Firma zatrudnia trzech pracowników
@@ -76,6 +73,25 @@ public class Main {
         System.out.println(E2.getName());
         System.out.println(E3.getName());
         System.out.println(E4.getName());
+        */
+
+        //CompositeText
+
+        //Stworzenie Dowódcy Generała jako Kompozytu zarządzajęcego armią
+        GeneralComposite general = new GeneralComposite();
+
+        //Tworzymy trzy jednostki
+        Army inantry = new Infantry();
+        Army cavalry = new Cavalry();
+        Army shoooter = new Shooter();
+
+        //Generał zbiera oddziały
+        general.gatherArmy(inantry);
+        general.gatherArmy(cavalry);
+        general.gatherArmy(shoooter);
+
+        //Generał wydaje rozkaz do ataku
+        general.fight();
 
     }
 }
