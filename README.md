@@ -7,3 +7,4 @@ Patterns available:
 4) State
 5) Object Null
 6) Composite
+7) Visitor
