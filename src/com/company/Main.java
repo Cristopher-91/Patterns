@@ -1,6 +1,6 @@
 package com.company;
 
-import PatternComposite.*;
+import PatternVisitor.*;
 
 public class Main {
 
@@ -75,9 +75,10 @@ public class Main {
         System.out.println(E4.getName());
         */
 
-        //CompositeText
+        //CompositeTest
 
         //Stworzenie Dowódcy Generała jako Kompozytu zarządzajęcego armią
+        /*
         GeneralComposite general = new GeneralComposite();
 
         //Tworzymy trzy jednostki
@@ -92,6 +93,28 @@ public class Main {
 
         //Generał wydaje rozkaz do ataku
         general.fight();
+        */
+
+        //VisitorText
+        //Asortyment sklepowy
+        Milk milk = new Milk();
+        Beer beer = new Beer();
+        Cola cola = new Cola();
+
+
+        //Tworzymy klienta
+        Customer Adam = new Customer();
+
+        //Klient odwiedza odpowiednie produkty
+        Adam.visit(milk);
+        Adam.visit(cola);
+        Adam.visit(beer);
+
+        Register register = new Register(Adam, 1);
+        register.TotalPrice(Adam.getShoopingCart());
+
+
+
 
     }
 }
