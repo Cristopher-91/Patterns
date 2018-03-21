@@ -101,19 +101,18 @@ public class Main {
         Beer beer = new Beer();
         Cola cola = new Cola();
 
-
         //Tworzymy klienta
         Customer Adam = new Customer();
 
-        //Klient odwiedza odpowiednie produkty
-        Adam.visit(milk);
-        Adam.visit(cola);
-        Adam.visit(beer);
+        //Adam kupuje produkt
+        Adam.buySomething(milk);
+        Adam.buySomething(beer);
+        Adam.buySomething(cola);
 
+        //Kasa fiskalna skanuje produkty
         Register register = new Register(Adam, 1);
         register.TotalPrice(Adam.getShoopingCart());
-
-
+        Adam.moneyLeft();
 
 
     }

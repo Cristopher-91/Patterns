@@ -3,12 +3,11 @@ package PatternVisitor;
 import java.util.ArrayList;
 
 public class Register implements IPrices {
-    private IVisitor visitor;
-    private static IProduct products;
+    private Customer visitor;
     private int number;
-    private int totalPrice;
+    private double totalPrice = 0;
 
-    public Register(IVisitor visitor, int number) {
+    public Register(Customer visitor, int number) {
         this.visitor = visitor;
         this.number = number;
     }
@@ -18,13 +17,15 @@ public class Register implements IPrices {
         return 0;
     }
 
-    public double TotalPrice(ArrayList<Customer.Item> products){
-        for (Customer.Item product: products
+    public double TotalPrice(ArrayList<IProduct> products){
+        //Resetuje kasę
+        totalPrice = 0;
+        for (IProduct product: products
              ) {
-            product.getName().accept(visitor);
-            totalPrice += (((IPrices) product).getPrice() * product.getAmount());
+            product.accept(visitor);
+            totalPrice += (((IPrices) product).getPrice() * visitor.getAmount());
         }
-
+        visitor.setCash(visitor.getCash() - totalPrice);
         System.out.println("Register number: " + number + " - Total Price: " + totalPrice);
         return totalPrice;
     }
